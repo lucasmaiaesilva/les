@@ -1,4 +1,8 @@
 {
+  "metadata": {
+    "title": "L&S Tech - Consultoria Especializada em TI",
+    "description": "Soluções de TI sob medida para empresas que buscam inovação, segurança e performance."
+  },
   "header": {
     "nav": {
       "home": "Início",
@@ -125,4 +129,3 @@
     "rights": "Todos os direitos reservados."
   }
 }
-

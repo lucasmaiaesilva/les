@@ -1,4 +1,8 @@
 {
+  "metadata": {
+    "title": "L&S Tech - Specialized IT Consulting",
+    "description": "Custom IT solutions for companies seeking innovation, security, and performance."
+  },
   "header": {
     "nav": {
       "home": "Home",
@@ -125,4 +129,3 @@
     "rights": "All rights reserved."
   }
 }
-

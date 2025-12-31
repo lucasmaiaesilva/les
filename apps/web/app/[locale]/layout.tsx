@@ -1,5 +1,6 @@
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
+import { getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { locales, type Locale } from "../../config";
 import type { Metadata } from "next";
@@ -18,11 +19,19 @@ const geistMono = localFont({
   variable: "--font-geist-mono",
 });
 
-export const metadata: Metadata = {
-  title: "L&S Tech - Consultoria Especializada em TI",
-  description:
-    "Soluções de TI sob medida para empresas que buscam inovação, segurança e performance.",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "metadata" });
+
+  return {
+    title: t("title"),
+    description: t("description"),
+  };
+}
 
 export default async function LocaleLayout({
   children,
