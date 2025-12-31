@@ -37,7 +37,13 @@ const Header = () => {
       <div className="container mx-auto px-6 py-4">
         <nav className="flex items-center justify-between">
           <a href="#inicio" className="flex items-center gap-3 group">
-            <Image src="/logo.svg" alt="L&S Tech Logo" className="h-8 w-10 transition-transform group-hover:scale-110" width={40} height={32} />
+            <Image
+              src="/logo.svg"
+              alt="L&S Tech Logo"
+              className="h-8 w-10 transition-transform group-hover:scale-110"
+              width={40}
+              height={32}
+            />
             <span className="text-xl font-bold tracking-tight">
               L&S <span className="gradient-text">Tech</span>
             </span>
@@ -74,17 +80,17 @@ const Header = () => {
             </Button>
           </div>
 
-          <button
+          <Button
             className="md:hidden p-2 text-foreground"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle menu"
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          </Button>
         </nav>
 
         {isMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 border-t border-border pt-4 animate-fade-in">
+          <div className="md:hidden mt-4 p-4 border-t border-border animate-fade-in">
             <div className="flex flex-col gap-4">
               {navLinks.map((link) => (
                 <a
@@ -101,7 +107,7 @@ const Header = () => {
                   <DropdownMenuTrigger asChild>
                     <Button variant="ghost" size="icon" className="gap-2">
                       <Globe size={18} />
-                      <span className="text-sm uppercase">{locale}</span>
+                      <span className="text-sm uppercase px-4">{locale}</span>
                     </Button>
                   </DropdownMenuTrigger>
                   <DropdownMenuContent align="end">
@@ -126,4 +132,3 @@ const Header = () => {
 };
 
 export default Header;
-
