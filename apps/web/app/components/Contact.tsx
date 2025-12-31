@@ -1,14 +1,33 @@
 "use client";
 
-import { Mail, Phone, MapPin, Send } from "lucide-react";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Send,
+  CheckCircle2,
+  AlertCircle,
+} from "lucide-react";
 import { Button } from "@repo/ui/button";
 import { Input } from "@repo/ui/input";
 import { Textarea } from "@repo/ui/textarea";
+import { Alert, AlertDescription } from "@repo/ui/alert";
 import { useTranslations } from "next-intl";
+import { useActionState, useEffect, useRef } from "react";
+import { sendContactEmail } from "../actions/send-contact-email";
 
 const Contact = () => {
   const t = useTranslations("contact");
-  
+  const formRef = useRef<HTMLFormElement>(null);
+
+  const [state, formAction, isPending] = useActionState(sendContactEmail, null);
+
+  useEffect(() => {
+    if (state?.success) {
+      formRef.current?.reset();
+    }
+  }, [state?.success]);
+
   const contactInfo = [
     { icon: Mail, label: t("info.email"), value: "contato@lstech.com.br" },
     { icon: Phone, label: t("info.phone"), value: "+55 (11) 99999-9999" },
@@ -24,16 +43,18 @@ const Contact = () => {
             {t("title")}
           </span>
           <h2 className="text-3xl md:text-4xl font-bold mt-3 mb-4">
-            {t("heading", { highlight: t("highlight") }).split(t("highlight")).map((part, i, arr) => 
-              i === arr.length - 1 ? (
-                <span key={i}>{part}</span>
-              ) : (
-                <span key={i}>
-                  {part}
-                  <span className="gradient-text">{t("highlight")}</span>
-                </span>
-              )
-            )}
+            {t("heading", { highlight: t("highlight") })
+              .split(t("highlight"))
+              .map((part, i, arr) =>
+                i === arr.length - 1 ? (
+                  <span key={i}>{part}</span>
+                ) : (
+                  <span key={i}>
+                    {part}
+                    <span className="gradient-text">{t("highlight")}</span>
+                  </span>
+                )
+              )}
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             {t("description")}
@@ -43,32 +64,80 @@ const Contact = () => {
         <div className="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
           <div className="glass-card p-8 rounded-xl">
             <h3 className="text-xl font-semibold mb-6">{t("form.title")}</h3>
-            <form className="space-y-5">
+            <form ref={formRef} action={formAction} className="space-y-5">
+              {state?.success && (
+                <Alert className="bg-green-500/10 border-green-500/50 text-green-600 dark:text-green-400">
+                  <CheckCircle2 className="h-4 w-4" />
+                  <AlertDescription>{t("form.success")}</AlertDescription>
+                </Alert>
+              )}
+              {state?.error && (
+                <Alert variant="destructive">
+                  <AlertCircle className="h-4 w-4" />
+                  <AlertDescription>{state.error}</AlertDescription>
+                </Alert>
+              )}
               <div className="grid sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="text-sm text-muted-foreground mb-2 block">{t("form.name")}</label>
-                  <Input placeholder={t("form.namePlaceholder")} className="bg-secondary/50 border-border" />
+                  <label className="text-sm text-muted-foreground mb-2 block">
+                    {t("form.name")}
+                  </label>
+                  <Input
+                    name="name"
+                    placeholder={t("form.namePlaceholder")}
+                    className="bg-secondary/50 border-border"
+                    required
+                    disabled={isPending}
+                  />
                 </div>
                 <div>
-                  <label className="text-sm text-muted-foreground mb-2 block">{t("form.email")}</label>
-                  <Input type="email" placeholder={t("form.emailPlaceholder")} className="bg-secondary/50 border-border" />
+                  <label className="text-sm text-muted-foreground mb-2 block">
+                    {t("form.email")}
+                  </label>
+                  <Input
+                    name="email"
+                    type="email"
+                    placeholder={t("form.emailPlaceholder")}
+                    className="bg-secondary/50 border-border"
+                    required
+                    disabled={isPending}
+                  />
                 </div>
               </div>
               <div>
-                <label className="text-sm text-muted-foreground mb-2 block">{t("form.company")}</label>
-                <Input placeholder={t("form.companyPlaceholder")} className="bg-secondary/50 border-border" />
-              </div>
-              <div>
-                <label className="text-sm text-muted-foreground mb-2 block">{t("form.message")}</label>
-                <Textarea 
-                  placeholder={t("form.messagePlaceholder")} 
-                  rows={4}
-                  className="bg-secondary/50 border-border resize-none"
+                <label className="text-sm text-muted-foreground mb-2 block">
+                  {t("form.company")}
+                </label>
+                <Input
+                  name="company"
+                  placeholder={t("form.companyPlaceholder")}
+                  className="bg-secondary/50 border-border"
+                  disabled={isPending}
                 />
               </div>
-              <Button className="w-full gradient-primary font-semibold group">
-                {t("form.submit")}
-                <Send className="ml-2 group-hover:translate-x-1 transition-transform" size={18} />
+              <div>
+                <label className="text-sm text-muted-foreground mb-2 block">
+                  {t("form.message")}
+                </label>
+                <Textarea
+                  name="message"
+                  placeholder={t("form.messagePlaceholder")}
+                  rows={4}
+                  className="bg-secondary/50 border-border resize-none"
+                  required
+                  disabled={isPending}
+                />
+              </div>
+              <Button
+                type="submit"
+                className="w-full gradient-primary font-semibold group"
+                disabled={isPending}
+              >
+                {isPending ? t("form.sending") : t("form.submit")}
+                <Send
+                  className="ml-2 group-hover:translate-x-1 transition-transform"
+                  size={18}
+                />
               </Button>
             </form>
           </div>
@@ -81,7 +150,9 @@ const Contact = () => {
                     <info.icon size={22} className="text-primary-foreground" />
                   </div>
                   <div>
-                    <div className="text-sm text-muted-foreground">{info.label}</div>
+                    <div className="text-sm text-muted-foreground">
+                      {info.label}
+                    </div>
                     <div className="font-medium">{info.value}</div>
                   </div>
                 </div>
@@ -93,7 +164,8 @@ const Contact = () => {
                 <span className="text-primary">// </span>
                 <span className="text-green-400">{t("code.comment")}</span>
                 <br />
-                <span className="text-primary">{t("code.const")}</span> projeto = lstech.
+                <span className="text-primary">{t("code.const")}</span> projeto
+                = lstech.
                 <span className="text-primary">{t("code.start")}</span>();
                 <span className="terminal-cursor" />
               </code>
@@ -106,4 +178,3 @@ const Contact = () => {
 };
 
 export default Contact;
-

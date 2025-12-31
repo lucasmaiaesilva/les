@@ -111,7 +111,9 @@
       "companyPlaceholder": "Company name",
       "message": "Message",
       "messagePlaceholder": "How can we help?",
-      "submit": "Send Message"
+      "submit": "Send Message",
+      "sending": "Sending...",
+      "success": "Message sent successfully! We will contact you soon."
     },
     "info": {
       "email": "Email",
