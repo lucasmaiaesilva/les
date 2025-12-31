@@ -45,7 +45,7 @@ const Header = () => {
               height={32}
             />
             <span className="text-xl font-bold tracking-tight">
-              L&S <span className="gradient-text">Tech</span>
+              L&S <span className="gradient-text">Code Tech</span>
             </span>
           </a>
 

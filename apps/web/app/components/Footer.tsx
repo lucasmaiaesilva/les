@@ -20,9 +20,15 @@ const Footer = () => {
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-3">
-            <Image src="/logo.svg" alt="L&S Tech Logo" className="h-8 w-10" width={40} height={32} />
+            <Image
+              src="/logo.svg"
+              alt="L&S Tech Logo"
+              className="h-8 w-10"
+              width={40}
+              height={32}
+            />
             <span className="text-lg font-bold">
-              L&S <span className="gradient-text">Tech</span>
+              L&S <span className="gradient-text">Code Tech</span>
             </span>
           </div>
 
@@ -49,4 +55,3 @@ const Footer = () => {
 };
 
 export default Footer;
-
