@@ -1,0 +1,128 @@
+{
+  "header": {
+    "nav": {
+      "home": "Início",
+      "services": "Serviços",
+      "about": "Sobre",
+      "contact": "Contato"
+    },
+    "cta": "Fale Conosco"
+  },
+  "hero": {
+    "badge": "Consultoria Especializada em TI",
+    "title": "Transformamos sua infraestrutura em vantagem competitiva",
+    "highlight": "infraestrutura",
+    "subtitle": "Soluções de TI sob medida para empresas que buscam inovação, segurança e performance. Do planejamento à execução.",
+    "cta": {
+      "primary": "Iniciar Projeto",
+      "secondary": "Conhecer Serviços"
+    },
+    "code": {
+      "const": "const",
+      "await": "await",
+      "transform": "transformar",
+      "company": "sua_empresa"
+    }
+  },
+  "services": {
+    "title": "Nossos Serviços",
+    "subtitle": "Soluções completas para sua empresa",
+    "highlight": "empresa",
+    "description": "Oferecemos um portfólio abrangente de serviços de TI, adaptados às necessidades específicas do seu negócio.",
+    "items": {
+      "cloud": {
+        "title": "Cloud Computing",
+        "description": "Migração e gestão de infraestrutura em nuvem AWS, Azure e Google Cloud com alta disponibilidade."
+      },
+      "security": {
+        "title": "Segurança da Informação",
+        "description": "Proteção completa contra ameaças cibernéticas, análise de vulnerabilidades e compliance."
+      },
+      "development": {
+        "title": "Desenvolvimento",
+        "description": "Sistemas sob medida, APIs robustas e integrações que impulsionam seu negócio."
+      },
+      "data": {
+        "title": "Gestão de Dados",
+        "description": "Business Intelligence, Data Analytics e governança de dados para decisões estratégicas."
+      },
+      "infrastructure": {
+        "title": "Infraestrutura",
+        "description": "Planejamento, implementação e manutenção de redes, servidores e datacenter."
+      },
+      "support": {
+        "title": "Suporte 24/7",
+        "description": "Equipe técnica especializada disponível para resolver incidentes a qualquer momento."
+      }
+    }
+  },
+  "about": {
+    "title": "Sobre Nós",
+    "heading": "Parceiros em inovação e tecnologia",
+    "highlight": "inovação",
+    "description": "A L&S Tech nasceu da paixão por transformar desafios tecnológicos em oportunidades de crescimento. Com uma equipe multidisciplinar de especialistas, entregamos soluções que fazem a diferença.",
+    "benefits": [
+      "Equipe certificada nas principais tecnologias do mercado",
+      "Metodologia ágil e entregas contínuas",
+      "Suporte técnico especializado 24 horas",
+      "Soluções escaláveis e personalizadas",
+      "Foco em resultados e ROI mensurável"
+    ],
+    "stats": {
+      "clients": "Clientes Atendidos",
+      "experience": "Anos de Experiência",
+      "uptime": "Uptime Garantido"
+    }
+  },
+  "locations": {
+    "title": "Presença Global",
+    "heading": "Projetos em 4 continentes",
+    "highlight": "4 continentes",
+    "description": "Com experiência internacional, já desenvolvemos soluções tecnológicas de alto impacto em diferentes países, conectando culturas e tecnologias.",
+    "countries": {
+      "brazil": "Brasil",
+      "usa": "Estados Unidos",
+      "austria": "Áustria",
+      "canada": "Canadá"
+    },
+    "cities": {
+      "brazil": ["São Paulo", "Minas Gerais", "Rio de Janeiro"],
+      "usa": ["Texas", "São Francisco", "Chicago"],
+      "austria": ["Innsbruck"],
+      "canada": ["Vancouver"]
+    }
+  },
+  "contact": {
+    "title": "Contato",
+    "heading": "Vamos conversar?",
+    "highlight": "conversar",
+    "description": "Entre em contato e descubra como podemos transformar a tecnologia em um diferencial competitivo para sua empresa.",
+    "form": {
+      "title": "Envie sua mensagem",
+      "name": "Nome",
+      "namePlaceholder": "Seu nome",
+      "email": "Email",
+      "emailPlaceholder": "seu@email.com",
+      "company": "Empresa",
+      "companyPlaceholder": "Nome da empresa",
+      "message": "Mensagem",
+      "messagePlaceholder": "Como podemos ajudar?",
+      "submit": "Enviar Mensagem"
+    },
+    "info": {
+      "email": "Email",
+      "phone": "Telefone",
+      "address": "Endereço"
+    },
+    "code": {
+      "comment": "Pronto para começar?",
+      "const": "const",
+      "start": "iniciar"
+    }
+  },
+  "footer": {
+    "description": "Transformando tecnologia em resultados.",
+    "rights": "Todos os direitos reservados."
+  }
+}
+

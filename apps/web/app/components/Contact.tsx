@@ -4,69 +4,75 @@ import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { Button } from "@repo/ui/button";
 import { Input } from "@repo/ui/input";
 import { Textarea } from "@repo/ui/textarea";
-
-const contactInfo = [
-  { icon: Mail, label: "Email", value: "contato@lstech.com.br" },
-  { icon: Phone, label: "Telefone", value: "+55 (11) 99999-9999" },
-  { icon: MapPin, label: "Endereço", value: "São Paulo, SP - Brasil" },
-];
+import { useTranslations } from "next-intl";
 
 const Contact = () => {
+  const t = useTranslations("contact");
+  
+  const contactInfo = [
+    { icon: Mail, label: t("info.email"), value: "contato@lstech.com.br" },
+    { icon: Phone, label: t("info.phone"), value: "+55 (11) 99999-9999" },
+    { icon: MapPin, label: t("info.address"), value: "São Paulo, SP - Brasil" },
+  ];
   return (
     <section id="contato" className="py-24 relative">
-      {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-t from-secondary/50 to-transparent" />
 
       <div className="container relative z-10 mx-auto px-6">
-        {/* Section Header */}
         <div className="text-center mb-16">
           <span className="text-primary text-sm font-semibold tracking-wider uppercase">
-            Contato
+            {t("title")}
           </span>
           <h2 className="text-3xl md:text-4xl font-bold mt-3 mb-4">
-            Vamos <span className="gradient-text">conversar</span>?
+            {t("heading", { highlight: t("highlight") }).split(t("highlight")).map((part, i, arr) => 
+              i === arr.length - 1 ? (
+                <span key={i}>{part}</span>
+              ) : (
+                <span key={i}>
+                  {part}
+                  <span className="gradient-text">{t("highlight")}</span>
+                </span>
+              )
+            )}
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Entre em contato e descubra como podemos transformar a tecnologia 
-            em um diferencial competitivo para sua empresa.
+            {t("description")}
           </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
-          {/* Contact Form */}
           <div className="glass-card p-8 rounded-xl">
-            <h3 className="text-xl font-semibold mb-6">Envie sua mensagem</h3>
+            <h3 className="text-xl font-semibold mb-6">{t("form.title")}</h3>
             <form className="space-y-5">
               <div className="grid sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="text-sm text-muted-foreground mb-2 block">Nome</label>
-                  <Input placeholder="Seu nome" className="bg-secondary/50 border-border" />
+                  <label className="text-sm text-muted-foreground mb-2 block">{t("form.name")}</label>
+                  <Input placeholder={t("form.namePlaceholder")} className="bg-secondary/50 border-border" />
                 </div>
                 <div>
-                  <label className="text-sm text-muted-foreground mb-2 block">Email</label>
-                  <Input type="email" placeholder="seu@email.com" className="bg-secondary/50 border-border" />
+                  <label className="text-sm text-muted-foreground mb-2 block">{t("form.email")}</label>
+                  <Input type="email" placeholder={t("form.emailPlaceholder")} className="bg-secondary/50 border-border" />
                 </div>
               </div>
               <div>
-                <label className="text-sm text-muted-foreground mb-2 block">Empresa</label>
-                <Input placeholder="Nome da empresa" className="bg-secondary/50 border-border" />
+                <label className="text-sm text-muted-foreground mb-2 block">{t("form.company")}</label>
+                <Input placeholder={t("form.companyPlaceholder")} className="bg-secondary/50 border-border" />
               </div>
               <div>
-                <label className="text-sm text-muted-foreground mb-2 block">Mensagem</label>
+                <label className="text-sm text-muted-foreground mb-2 block">{t("form.message")}</label>
                 <Textarea 
-                  placeholder="Como podemos ajudar?" 
+                  placeholder={t("form.messagePlaceholder")} 
                   rows={4}
                   className="bg-secondary/50 border-border resize-none"
                 />
               </div>
               <Button className="w-full gradient-primary font-semibold group">
-                Enviar Mensagem
+                {t("form.submit")}
                 <Send className="ml-2 group-hover:translate-x-1 transition-transform" size={18} />
               </Button>
             </form>
           </div>
 
-          {/* Contact Info */}
           <div className="flex flex-col justify-center">
             <div className="space-y-6">
               {contactInfo.map((info) => (
@@ -85,10 +91,10 @@ const Contact = () => {
             <div className="mt-12 p-6 code-block">
               <code className="text-sm text-muted-foreground block">
                 <span className="text-primary">// </span>
-                <span className="text-green-400">Pronto para começar?</span>
+                <span className="text-green-400">{t("code.comment")}</span>
                 <br />
-                <span className="text-primary">const</span> projeto = lstech.
-                <span className="text-primary">iniciar</span>();
+                <span className="text-primary">{t("code.const")}</span> projeto = lstech.
+                <span className="text-primary">{t("code.start")}</span>();
                 <span className="terminal-cursor" />
               </code>
             </div>

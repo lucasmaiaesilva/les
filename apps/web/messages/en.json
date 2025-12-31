@@ -1,0 +1,128 @@
+{
+  "header": {
+    "nav": {
+      "home": "Home",
+      "services": "Services",
+      "about": "About",
+      "contact": "Contact"
+    },
+    "cta": "Contact Us"
+  },
+  "hero": {
+    "badge": "Specialized IT Consulting",
+    "title": "Transform your infrastructure into a competitive advantage",
+    "highlight": "infrastructure",
+    "subtitle": "Custom IT solutions for companies seeking innovation, security, and performance. From planning to execution.",
+    "cta": {
+      "primary": "Start Project",
+      "secondary": "Learn More"
+    },
+    "code": {
+      "const": "const",
+      "await": "await",
+      "transform": "transform",
+      "company": "your_company"
+    }
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "Complete solutions for your company",
+    "highlight": "company",
+    "description": "We offer a comprehensive portfolio of IT services, tailored to your business's specific needs.",
+    "items": {
+      "cloud": {
+        "title": "Cloud Computing",
+        "description": "Migration and management of cloud infrastructure on AWS, Azure, and Google Cloud with high availability."
+      },
+      "security": {
+        "title": "Information Security",
+        "description": "Complete protection against cyber threats, vulnerability analysis, and compliance."
+      },
+      "development": {
+        "title": "Development",
+        "description": "Custom systems, robust APIs, and integrations that drive your business."
+      },
+      "data": {
+        "title": "Data Management",
+        "description": "Business Intelligence, Data Analytics, and data governance for strategic decisions."
+      },
+      "infrastructure": {
+        "title": "Infrastructure",
+        "description": "Planning, implementation, and maintenance of networks, servers, and datacenters."
+      },
+      "support": {
+        "title": "24/7 Support",
+        "description": "Specialized technical team available to resolve incidents at any time."
+      }
+    }
+  },
+  "about": {
+    "title": "About Us",
+    "heading": "Partners in innovation and technology",
+    "highlight": "innovation",
+    "description": "L&S Tech was born from the passion to transform technological challenges into growth opportunities. With a multidisciplinary team of specialists, we deliver solutions that make a difference.",
+    "benefits": [
+      "Team certified in the main market technologies",
+      "Agile methodology and continuous deliveries",
+      "Specialized 24-hour technical support",
+      "Scalable and customized solutions",
+      "Focus on results and measurable ROI"
+    ],
+    "stats": {
+      "clients": "Clients Served",
+      "experience": "Years of Experience",
+      "uptime": "Guaranteed Uptime"
+    }
+  },
+  "locations": {
+    "title": "Global Presence",
+    "heading": "Projects across 4 continents",
+    "highlight": "4 continents",
+    "description": "With international experience, we have developed high-impact technological solutions in different countries, connecting cultures and technologies.",
+    "countries": {
+      "brazil": "Brazil",
+      "usa": "United States",
+      "austria": "Austria",
+      "canada": "Canada"
+    },
+    "cities": {
+      "brazil": ["São Paulo", "Minas Gerais", "Rio de Janeiro"],
+      "usa": ["Texas", "San Francisco", "Chicago"],
+      "austria": ["Innsbruck"],
+      "canada": ["Vancouver"]
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "heading": "Let's talk?",
+    "highlight": "talk",
+    "description": "Get in touch and discover how we can transform technology into a competitive advantage for your company.",
+    "form": {
+      "title": "Send your message",
+      "name": "Name",
+      "namePlaceholder": "Your name",
+      "email": "Email",
+      "emailPlaceholder": "your@email.com",
+      "company": "Company",
+      "companyPlaceholder": "Company name",
+      "message": "Message",
+      "messagePlaceholder": "How can we help?",
+      "submit": "Send Message"
+    },
+    "info": {
+      "email": "Email",
+      "phone": "Phone",
+      "address": "Address"
+    },
+    "code": {
+      "comment": "Ready to get started?",
+      "const": "const",
+      "start": "start"
+    }
+  },
+  "footer": {
+    "description": "Transforming technology into results.",
+    "rights": "All rights reserved."
+  }
+}
+

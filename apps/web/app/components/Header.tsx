@@ -1,19 +1,36 @@
 "use client";
 
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Globe } from "lucide-react";
 import { Button } from "@repo/ui/button";
 import Image from "next/image";
+import { useTranslations, useLocale } from "next-intl";
+import { useRouter, usePathname } from "next/navigation";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@repo/ui/dropdown-menu";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const t = useTranslations("header");
+  const locale = useLocale();
+  const router = useRouter();
+  const pathname = usePathname();
 
   const navLinks = [
-    { href: "#inicio", label: "Início" },
-    { href: "#servicos", label: "Serviços" },
-    { href: "#sobre", label: "Sobre" },
-    { href: "#contato", label: "Contato" },
+    { href: "#inicio", label: t("nav.home") },
+    { href: "#servicos", label: t("nav.services") },
+    { href: "#sobre", label: t("nav.about") },
+    { href: "#contato", label: t("nav.contact") },
   ];
+
+  const switchLocale = (newLocale: string) => {
+    const newPath = pathname.replace(`/${locale}`, `/${newLocale}`);
+    router.push(newPath);
+  };
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 glass">
@@ -26,7 +43,6 @@ const Header = () => {
             </span>
           </a>
 
-          {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
               <a
@@ -37,12 +53,27 @@ const Header = () => {
                 {link.label}
               </a>
             ))}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="ghost" size="icon" className="gap-2">
+                  <Globe size={18} />
+                  <span className="text-sm uppercase">{locale}</span>
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end">
+                <DropdownMenuItem onClick={() => switchLocale("pt")}>
+                  Português
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => switchLocale("en")}>
+                  English
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
             <Button className="gradient-primary font-semibold">
-              Fale Conosco
+              {t("cta")}
             </Button>
           </div>
 
-          {/* Mobile Menu Button */}
           <button
             className="md:hidden p-2 text-foreground"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -52,7 +83,6 @@ const Header = () => {
           </button>
         </nav>
 
-        {/* Mobile Navigation */}
         {isMenuOpen && (
           <div className="md:hidden mt-4 pb-4 border-t border-border pt-4 animate-fade-in">
             <div className="flex flex-col gap-4">
@@ -66,9 +96,27 @@ const Header = () => {
                   {link.label}
                 </a>
               ))}
-              <Button className="gradient-primary font-semibold w-full mt-2">
-                Fale Conosco
-              </Button>
+              <div className="flex items-center gap-2 mt-2">
+                <DropdownMenu>
+                  <DropdownMenuTrigger asChild>
+                    <Button variant="ghost" size="icon" className="gap-2">
+                      <Globe size={18} />
+                      <span className="text-sm uppercase">{locale}</span>
+                    </Button>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent align="end">
+                    <DropdownMenuItem onClick={() => switchLocale("pt")}>
+                      Português
+                    </DropdownMenuItem>
+                    <DropdownMenuItem onClick={() => switchLocale("en")}>
+                      English
+                    </DropdownMenuItem>
+                  </DropdownMenuContent>
+                </DropdownMenu>
+                <Button className="gradient-primary font-semibold flex-1">
+                  {t("cta")}
+                </Button>
+              </div>
             </div>
           </div>
         )}
