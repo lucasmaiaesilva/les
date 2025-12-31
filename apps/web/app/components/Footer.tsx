@@ -4,6 +4,7 @@ import { useTranslations } from "next-intl";
 
 import { Linkedin, Instagram, Github } from "lucide-react";
 import Image from "next/image";
+import Logo from "./Logo";
 
 const Footer = () => {
   const t = useTranslations("footer");
@@ -20,16 +21,7 @@ const Footer = () => {
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-3">
-            <Image
-              src="/logo.svg"
-              alt="L&S Tech Logo"
-              className="h-8 w-10"
-              width={40}
-              height={32}
-            />
-            <span className="text-lg font-bold">
-              L&S <span className="gradient-text">Code Tech</span>
-            </span>
+            <Logo height={60} />
           </div>
 
           <div className="flex items-center gap-4">

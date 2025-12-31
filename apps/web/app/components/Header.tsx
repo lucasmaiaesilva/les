@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { Menu, X, Globe } from "lucide-react";
 import { Button } from "@repo/ui/button";
-import Image from "next/image";
 import { useTranslations, useLocale } from "next-intl";
 import { useRouter, usePathname } from "next/navigation";
 import {
@@ -12,6 +11,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@repo/ui/dropdown-menu";
+import Logo from "./Logo";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -37,16 +37,7 @@ const Header = () => {
       <div className="container mx-auto px-6 py-4">
         <nav className="flex items-center justify-between">
           <a href="#inicio" className="flex items-center gap-3 group">
-            <Image
-              src="/logo.svg"
-              alt="L&S Tech Logo"
-              className="h-8 w-10 transition-transform group-hover:scale-110"
-              width={40}
-              height={32}
-            />
-            <span className="text-xl font-bold tracking-tight">
-              L&S <span className="gradient-text">Code Tech</span>
-            </span>
+            <Logo height={60} />
           </a>
 
           <div className="hidden md:flex items-center gap-8">
