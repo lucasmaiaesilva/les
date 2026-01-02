@@ -7,3 +7,4 @@ export const routing = {
   localePrefix: 'always' as const
 };
 
+

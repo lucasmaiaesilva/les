@@ -23,6 +23,7 @@
     },
     "code": {
       "const": "const",
+      "success": "success",
       "await": "await",
       "transform": "transform",
       "company": "your_company"
@@ -118,12 +119,35 @@
     "info": {
       "email": "Email",
       "phone": "Phone",
-      "address": "Address"
+      "address": "Address",
+      "addressValue": "São Paulo, SP - Brazil"
     },
     "code": {
       "comment": "Ready to get started?",
       "const": "const",
+      "project": "project",
       "start": "start"
+    },
+    "errors": {
+      "nameRequired": "Name field is required",
+      "emailRequired": "Email field is required",
+      "emailInvalid": "Invalid email format",
+      "messageRequired": "Message field is required",
+      "serverError": "Server configuration error. Please try again later.",
+      "sendError": "Error sending email. Please try again.",
+      "unknownError": "Unknown error",
+      "sendErrorWithDetails": "Error sending email: {error}. Please try again."
+    },
+    "email": {
+      "subject": "New contact message from {name}",
+      "title": "New contact message",
+      "fields": {
+        "name": "Name",
+        "email": "Email",
+        "company": "Company",
+        "message": "Message",
+        "companyNotProvided": "Not provided"
+      }
     }
   },
   "footer": {

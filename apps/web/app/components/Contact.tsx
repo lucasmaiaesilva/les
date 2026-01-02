@@ -29,9 +29,9 @@ const Contact = () => {
   }, [state?.success]);
 
   const contactInfo = [
-    { icon: Mail, label: t("info.email"), value: "contato@lstech.com.br" },
-    { icon: Phone, label: t("info.phone"), value: "+55 (11) 99999-9999" },
-    { icon: MapPin, label: t("info.address"), value: "São Paulo, SP - Brasil" },
+    { icon: Mail, label: t("info.email"), value: "les.maiaxavier@gmail.com" },
+    { icon: Phone, label: t("info.phone"), value: "+55 (31) 97129-6997" },
+    { icon: MapPin, label: t("info.address"), value: t("info.addressValue") },
   ];
   return (
     <section id="contato" className="py-24 relative">
@@ -164,8 +164,8 @@ const Contact = () => {
                 <span className="text-primary">// </span>
                 <span className="text-green-400">{t("code.comment")}</span>
                 <br />
-                <span className="text-primary">{t("code.const")}</span> projeto
-                = lstech.
+                <span className="text-primary">{t("code.const")}</span>{" "}
+                {t("code.project")} = lstech.
                 <span className="text-primary">{t("code.start")}</span>();
                 <span className="terminal-cursor" />
               </code>

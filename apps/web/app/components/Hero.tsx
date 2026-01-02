@@ -90,8 +90,9 @@ const Hero = () => {
                 <div className="w-3 h-3 rounded-full bg-green-500/80" />
               </div>
               <code className="text-sm text-muted-foreground">
-                <span className="text-primary">{t("code.const")}</span> sucesso
-                = <span className="text-green-400">{t("code.await")}</span>{" "}
+                <span className="text-primary">{t("code.const")}</span>{" "}
+                {t("code.success")} ={" "}
+                <span className="text-green-400">{t("code.await")}</span>{" "}
                 lstech.
                 <span className="text-primary">{t("code.transform")}</span>(
                 <span className="text-orange-400">

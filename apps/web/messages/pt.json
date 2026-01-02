@@ -23,6 +23,7 @@
     },
     "code": {
       "const": "const",
+      "success": "sucesso",
       "await": "await",
       "transform": "transformar",
       "company": "sua_empresa"
@@ -118,12 +119,35 @@
     "info": {
       "email": "Email",
       "phone": "Telefone",
-      "address": "Endereço"
+      "address": "Endereço",
+      "addressValue": "São Paulo, SP - Brasil"
     },
     "code": {
       "comment": "Pronto para começar?",
       "const": "const",
+      "project": "projeto",
       "start": "iniciar"
+    },
+    "errors": {
+      "nameRequired": "O campo nome é obrigatório",
+      "emailRequired": "O campo email é obrigatório",
+      "emailInvalid": "Formato de email inválido",
+      "messageRequired": "O campo mensagem é obrigatório",
+      "serverError": "Erro de configuração do servidor. Por favor, tente novamente mais tarde.",
+      "sendError": "Erro ao enviar email. Tente novamente.",
+      "unknownError": "Erro desconhecido",
+      "sendErrorWithDetails": "Erro ao enviar email: {error}. Tente novamente."
+    },
+    "email": {
+      "subject": "Nova mensagem de contato de {name}",
+      "title": "Nova mensagem de contato",
+      "fields": {
+        "name": "Nome",
+        "email": "Email",
+        "company": "Empresa",
+        "message": "Mensagem",
+        "companyNotProvided": "Não informado"
+      }
     }
   },
   "footer": {

@@ -1,6 +1,7 @@
 "use server";
 
 import { Resend } from "resend";
+import { getLocale, getTranslations } from "next-intl/server";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -8,6 +9,8 @@ export async function sendContactEmail(
   _prevState: { success: boolean; error?: string } | null,
   formData: FormData
 ) {
+  const locale = await getLocale();
+  const t = await getTranslations({ locale, namespace: "contact.errors" });
   const getFormValue = (key: string): string => {
     const value = formData.get(key);
     if (value) return value.toString();
@@ -28,26 +31,25 @@ export async function sendContactEmail(
   };
 
   if (!rawFormData.name || !rawFormData.name.trim()) {
-    return { success: false, error: "O campo nome é obrigatório" };
+    return { success: false, error: t("nameRequired") };
   }
 
   if (!rawFormData.email || !rawFormData.email.trim()) {
-    return { success: false, error: "O campo email é obrigatório" };
+    return { success: false, error: t("emailRequired") };
   }
 
   if (!rawFormData.email.includes("@")) {
-    return { success: false, error: "Formato de email inválido" };
+    return { success: false, error: t("emailInvalid") };
   }
 
   if (!rawFormData.message || !rawFormData.message.trim()) {
-    return { success: false, error: "O campo mensagem é obrigatório" };
+    return { success: false, error: t("messageRequired") };
   }
 
   if (!process.env.RESEND_API_KEY) {
     return {
       success: false,
-      error:
-        "Erro de configuração do servidor. Por favor, tente novamente mais tarde.",
+      error: t("serverError"),
     };
   }
 
@@ -56,18 +58,20 @@ export async function sendContactEmail(
   const fromEmail =
     process.env.RESEND_FROM_EMAIL || "L&S Tech <onboarding@resend.dev>";
 
+  const tEmail = await getTranslations({ locale, namespace: "contact.email" });
+
   try {
     const result = await resend.emails.send({
       from: fromEmail,
       to: [recipientEmail],
-      subject: `Nova mensagem de contato de ${rawFormData.name}`,
+      subject: tEmail("subject", { name: rawFormData.name }),
       replyTo: rawFormData.email,
       html: `
-        <h2>Nova mensagem de contato</h2>
-        <p><strong>Nome:</strong> ${rawFormData.name}</p>
-        <p><strong>Email:</strong> ${rawFormData.email}</p>
-        <p><strong>Empresa:</strong> ${rawFormData.company || "Não informado"}</p>
-        <p><strong>Mensagem:</strong></p>
+        <h2>${tEmail("title")}</h2>
+        <p><strong>${tEmail("fields.name")}:</strong> ${rawFormData.name}</p>
+        <p><strong>${tEmail("fields.email")}:</strong> ${rawFormData.email}</p>
+        <p><strong>${tEmail("fields.company")}:</strong> ${rawFormData.company || tEmail("fields.companyNotProvided")}</p>
+        <p><strong>${tEmail("fields.message")}:</strong></p>
         <p>${rawFormData.message.replace(/\n/g, "<br>")}</p>
       `,
     });
@@ -75,17 +79,17 @@ export async function sendContactEmail(
     if (result.error) {
       return {
         success: false,
-        error: result.error.message || "Erro ao enviar email. Tente novamente.",
+        error: result.error.message || t("sendError"),
       };
     }
 
     return { success: true };
   } catch (error) {
     const errorMessage =
-      error instanceof Error ? error.message : "Erro desconhecido";
+      error instanceof Error ? error.message : t("unknownError");
     return {
       success: false,
-      error: `Erro ao enviar email: ${errorMessage}. Tente novamente.`,
+      error: t("sendErrorWithDetails", { error: errorMessage }),
     };
   }
 }
