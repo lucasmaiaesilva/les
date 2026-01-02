@@ -1,6 +1,6 @@
 "use client";
 
-import { Cloud, Shield, Code, Database, Settings, Headphones } from "lucide-react";
+import { Code, Box, Workflow, Cloud, Shield, Database } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 const Services = () => {
@@ -8,32 +8,32 @@ const Services = () => {
   
   const services = [
     {
-      icon: Cloud,
+      icon: Code,
       title: t("items.cloud.title"),
       description: t("items.cloud.description"),
     },
     {
-      icon: Shield,
+      icon: Box,
       title: t("items.security.title"),
       description: t("items.security.description"),
     },
     {
-      icon: Code,
+      icon: Workflow,
       title: t("items.development.title"),
       description: t("items.development.description"),
     },
     {
-      icon: Database,
+      icon: Cloud,
       title: t("items.data.title"),
       description: t("items.data.description"),
     },
     {
-      icon: Settings,
+      icon: Shield,
       title: t("items.infrastructure.title"),
       description: t("items.infrastructure.description"),
     },
     {
-      icon: Headphones,
+      icon: Database,
       title: t("items.support.title"),
       description: t("items.support.description"),
     },

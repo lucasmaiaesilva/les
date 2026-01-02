@@ -4,46 +4,23 @@ import { Globe } from "@repo/ui/globe";
 import { MapPin } from "lucide-react";
 import { useTranslations } from "next-intl";
 
-const globeLocations = [
+// Coordenadas centrais aproximadas de cada país
+const countryLocations = [
   {
     country: "Brasil",
-    city: "São Paulo",
-    coordinates: [-23.5505, -46.6333] as [number, number],
-  },
-  {
-    country: "Brasil",
-    city: "Minas Gerais",
-    coordinates: [-19.9167, -43.9345] as [number, number],
-  },
-  {
-    country: "Brasil",
-    city: "Rio de Janeiro",
-    coordinates: [-22.9068, -43.1729] as [number, number],
+    coordinates: [-14.235, -51.9253] as [number, number], // Centro geográfico do Brasil
   },
   {
     country: "Estados Unidos",
-    city: "Texas",
-    coordinates: [29.7604, -95.3698] as [number, number],
-  },
-  {
-    country: "Estados Unidos",
-    city: "São Francisco",
-    coordinates: [37.7749, -122.4194] as [number, number],
-  },
-  {
-    country: "Estados Unidos",
-    city: "Chicago",
-    coordinates: [41.8781, -87.6298] as [number, number],
+    coordinates: [39.8283, -98.5795] as [number, number], // Centro geográfico dos EUA
   },
   {
     country: "Áustria",
-    city: "Innsbruck",
-    coordinates: [47.2692, 11.4041] as [number, number],
+    coordinates: [47.5162, 14.5501] as [number, number], // Centro geográfico da Áustria
   },
   {
     country: "Canadá",
-    city: "Vancouver",
-    coordinates: [49.2827, -123.1207] as [number, number],
+    coordinates: [56.1304, -106.3468] as [number, number], // Centro geográfico do Canadá
   },
 ];
 
@@ -61,9 +38,9 @@ const GLOBE_CONFIG = {
   baseColor: [0.3, 0.3, 0.3] as [number, number, number],
   markerColor: [251 / 255, 100 / 255, 21 / 255] as [number, number, number],
   glowColor: [1, 1, 1] as [number, number, number],
-  markers: globeLocations.map((location) => ({
+  markers: countryLocations.map((location) => ({
     location: location.coordinates,
-    size: 0.1,
+    size: 0.25, // Marcadores maiores para dar mais destaque
   })),
 };
 
@@ -73,19 +50,15 @@ const Locations = () => {
   const countries = [
     {
       name: t("countries.brazil"),
-      cities: t.raw("cities.brazil") as string[],
     },
     {
       name: t("countries.usa"),
-      cities: t.raw("cities.usa") as string[],
     },
     {
       name: t("countries.austria"),
-      cities: t.raw("cities.austria") as string[],
     },
     {
       name: t("countries.canada"),
-      cities: t.raw("cities.canada") as string[],
     },
   ];
 
@@ -124,19 +97,16 @@ const Locations = () => {
             {countries.map((country, index) => (
               <div
                 key={country.name}
-                className="glass-card p-6 rounded-xl flex items-start gap-4 hover:border-primary/50 transition-all"
+                className="glass-card p-6 rounded-xl flex items-center gap-4 hover:border-primary/50 transition-all"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="w-12 h-12 rounded-lg gradient-primary flex items-center justify-center shrink-0">
                   <MapPin size={24} className="text-primary-foreground" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold gradient-text mb-1">
+                  <h3 className="text-xl font-bold gradient-text">
                     {country.name}
                   </h3>
-                  <p className="text-muted-foreground text-sm">
-                    {country.cities.join(", ")}
-                  </p>
                 </div>
               </div>
             ))}

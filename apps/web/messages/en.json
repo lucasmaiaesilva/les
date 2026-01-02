@@ -36,28 +36,28 @@
     "description": "We offer a comprehensive portfolio of IT services, tailored to your business's specific needs.",
     "items": {
       "cloud": {
-        "title": "Cloud Computing",
-        "description": "Migration and management of cloud infrastructure on AWS, Azure, and Google Cloud with high availability."
+        "title": "Fullstack Development",
+        "description": "End-to-end web and mobile applications. Modern and responsive frontend, scalable and performant backend. Robust APIs, third-party integrations and modern architectures that ensure high performance and scalability."
       },
       "security": {
-        "title": "Information Security",
-        "description": "Complete protection against cyber threats, vulnerability analysis, and compliance."
+        "title": "Platforms & Services",
+        "description": "Building scalable SaaS platforms, marketplaces, management systems and complete digital products. Microservices architecture, public and private APIs, and integration ecosystems that generate real value."
       },
       "development": {
-        "title": "Development",
-        "description": "Custom systems, robust APIs, and integrations that drive your business."
+        "title": "DevOps & Automation",
+        "description": "Complete process automation with custom workflows. Deployment management and automation, simplified continuous integration pipelines, system integration and task automation. Reduce manual work and accelerate daily operations."
       },
       "data": {
-        "title": "Data Management",
-        "description": "Business Intelligence, Data Analytics, and data governance for strategic decisions."
+        "title": "Cloud & Infrastructure",
+        "description": "Cloud-native architectures on leading cloud platforms. Strategic migration, cost optimization, auto-scaling and high availability. Serverless architectures, edge computing and hybrid solutions that grow with your business."
       },
       "infrastructure": {
-        "title": "Infrastructure",
-        "description": "Planning, implementation, and maintenance of networks, servers, and datacenters."
+        "title": "Applied Security",
+        "description": "Security by design: vulnerability analysis, automated compliance and layered protection. Advanced security policy implementation, complete encryption and 24/7 incident response."
       },
       "support": {
-        "title": "24/7 Support",
-        "description": "Specialized technical team available to resolve incidents at any time."
+        "title": "Data & Intelligence",
+        "description": "Robust data pipelines and modern storage. Advanced Business Intelligence, operational artificial intelligence and real-time analytics. Transform data into strategic decisions that drive results."
       }
     }
   },
@@ -69,9 +69,7 @@
     "benefits": [
       "Team certified in the main market technologies",
       "Agile methodology and continuous deliveries",
-      "Specialized 24-hour technical support",
-      "Scalable and customized solutions",
-      "Focus on results and measurable ROI"
+      "Scalable and customized solutions"
     ],
     "stats": {
       "clients": "Clients Served",
@@ -120,7 +118,7 @@
       "email": "Email",
       "phone": "Phone",
       "address": "Address",
-      "addressValue": "São Paulo, SP - Brazil"
+      "addressValue": "Minas Gerais, Brazil"
     },
     "code": {
       "comment": "Ready to get started?",

@@ -66,8 +66,8 @@ const Header = () => {
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
-            <Button className="gradient-primary font-semibold">
-              {t("cta")}
+            <Button className="gradient-primary font-semibold" asChild>
+              <a href="#contato">{t("cta")}</a>
             </Button>
           </div>
 
@@ -110,8 +110,10 @@ const Header = () => {
                     </DropdownMenuItem>
                   </DropdownMenuContent>
                 </DropdownMenu>
-                <Button className="gradient-primary font-semibold flex-1">
-                  {t("cta")}
+                <Button className="gradient-primary font-semibold flex-1" asChild>
+                  <a href="#contato" onClick={() => setIsMenuOpen(false)}>
+                    {t("cta")}
+                  </a>
                 </Button>
               </div>
             </div>

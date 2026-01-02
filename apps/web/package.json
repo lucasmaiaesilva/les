@@ -20,7 +20,9 @@
     "next-themes": "^0.3.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
-    "resend": "^6.6.0"
+    "react-globe.gl": "^2.37.0",
+    "resend": "^6.6.0",
+    "three": "^0.182.0"
   },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",

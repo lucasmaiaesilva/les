@@ -12,8 +12,12 @@ const Footer = () => {
 
   const socialLinks = [
     { icon: Linkedin, href: "#", label: "LinkedIn" },
-    { icon: Instagram, href: "#", label: "Instagram" },
-    { icon: Github, href: "#", label: "GitHub" },
+    {
+      icon: Instagram,
+      href: "https://www.instagram.com/lescodetech/",
+      label: "Instagram",
+    },
+    // { icon: Github, href: "#", label: "GitHub" },
   ];
 
   return (
@@ -31,6 +35,8 @@ const Footer = () => {
                 href={social.href}
                 className="w-10 h-10 rounded-lg border border-border flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary transition-colors"
                 aria-label={social.label}
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <social.icon size={18} />
               </a>

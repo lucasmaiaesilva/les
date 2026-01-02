@@ -36,28 +36,28 @@
     "description": "Oferecemos um portfólio abrangente de serviços de TI, adaptados às necessidades específicas do seu negócio.",
     "items": {
       "cloud": {
-        "title": "Cloud Computing",
-        "description": "Migração e gestão de infraestrutura em nuvem AWS, Azure e Google Cloud com alta disponibilidade."
+        "title": "Desenvolvimento Fullstack",
+        "description": "Aplicações web e mobile de ponta a ponta. Frontend moderno e responsivo, backend escalável e performático. APIs robustas, integrações de terceiros e arquiteturas modernas que garantem alta performance e escalabilidade."
       },
       "security": {
-        "title": "Segurança da Informação",
-        "description": "Proteção completa contra ameaças cibernéticas, análise de vulnerabilidades e compliance."
+        "title": "Plataformas & Serviços",
+        "description": "Criação de plataformas SaaS escaláveis, marketplaces, sistemas de gestão e produtos digitais completos. Arquitetura de microsserviços, APIs públicas e privadas, e ecossistemas de integração que geram valor real."
       },
       "development": {
-        "title": "Desenvolvimento",
-        "description": "Sistemas sob medida, APIs robustas e integrações que impulsionam seu negócio."
+        "title": "DevOps & Automação",
+        "description": "Automação completa de processos com workflows customizados. Gerenciamento e automação de deploys, pipelines de integração contínua simplificados, integração entre sistemas e automação de tarefas repetitivas. Reduza trabalho manual e acelere operações do dia a dia."
       },
       "data": {
-        "title": "Gestão de Dados",
-        "description": "Business Intelligence, Data Analytics e governança de dados para decisões estratégicas."
+        "title": "Cloud & Infraestrutura",
+        "description": "Arquiteturas cloud-native nas principais plataformas de nuvem. Migração estratégica, otimização de custos, auto-scaling e alta disponibilidade. Arquiteturas serverless, edge computing e soluções híbridas que crescem com seu negócio."
       },
       "infrastructure": {
-        "title": "Infraestrutura",
-        "description": "Planejamento, implementação e manutenção de redes, servidores e datacenter."
+        "title": "Segurança Aplicada",
+        "description": "Segurança desde o design: análise de vulnerabilidades, compliance automatizado e proteção em camadas. Implementação de políticas de segurança avançadas, criptografia completa e resposta a incidentes 24/7."
       },
       "support": {
-        "title": "Suporte 24/7",
-        "description": "Equipe técnica especializada disponível para resolver incidentes a qualquer momento."
+        "title": "Dados & Inteligência",
+        "description": "Pipelines de dados robustos e armazenamento moderno. Business Intelligence avançado, inteligência artificial operacional e analytics em tempo real. Transforme dados em decisões estratégicas que impulsionam resultados."
       }
     }
   },
@@ -69,9 +69,7 @@
     "benefits": [
       "Equipe certificada nas principais tecnologias do mercado",
       "Metodologia ágil e entregas contínuas",
-      "Suporte técnico especializado 24 horas",
-      "Soluções escaláveis e personalizadas",
-      "Foco em resultados e ROI mensurável"
+      "Soluções escaláveis e personalizadas"
     ],
     "stats": {
       "clients": "Clientes Atendidos",
@@ -120,7 +118,7 @@
       "email": "Email",
       "phone": "Telefone",
       "address": "Endereço",
-      "addressValue": "São Paulo, SP - Brasil"
+      "addressValue": "Minas Gerais, Brasil"
     },
     "code": {
       "comment": "Pronto para começar?",

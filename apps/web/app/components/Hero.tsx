@@ -63,12 +63,15 @@ const Hero = () => {
             <Button
               size="lg"
               className="gradient-primary glow-primary font-semibold text-base px-8 group"
+              asChild
             >
-              {t("cta.primary")}
-              <ArrowRight
-                className="ml-2 group-hover:translate-x-1 transition-transform"
-                size={18}
-              />
+              <a href="#contato">
+                {t("cta.primary")}
+                <ArrowRight
+                  className="ml-2 group-hover:translate-x-1 transition-transform"
+                  size={18}
+                />
+              </a>
             </Button>
             <Button
               size="lg"
